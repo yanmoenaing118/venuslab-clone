@@ -1,0 +1,15 @@
+.btn {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  &_primary {
+    background-color: rgb(var(--primary));
+    color: var(--dark);
+    text-transform: uppercase;
+    border-radius: 30px;
+    padding: 0.9em 1.45em;
+    font-size: 0.9rem;
+    font-weight: 100;
+  }
+}
