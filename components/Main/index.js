@@ -9,6 +9,9 @@ export default function Main() {
     <main>
       <Hero />
       <Section data={section.inHouse} img_first={false} />
+      <Section data={section.mdyRum} img_first={true} />
+      <Section data={section.meePyaTike} img_first={false} />
+      <Section data={section.mApn} img_first={true} />
     </main>
   );
 }

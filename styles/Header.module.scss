@@ -1,10 +1,10 @@
+@import "Responsive.module.scss";
+
 .header {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  // margin-top: -var(--header-height);
-  // height: var(--header-height);
 
   z-index: 9;
   background-color: rgba(var(--dark), 0.99);
@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
 
-  transition: all 0.5s var(--ease);
+  // transition: all 0.s var(--ease);
 
   &_wrapper {
     width: 100%;
@@ -56,7 +56,7 @@
               height: 1.3px;
               border-radius: 3px;
               background-color: #fff;
-              transition: width 1s var(--ease);
+              transition: width 0.5s var(--ease);
             }
 
             &:hover {

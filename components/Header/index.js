@@ -41,7 +41,7 @@ export default function Header() {
 
             <li>
               <Link href="/blog/hello-world">
-                <a>Portfolio</a>
+                <a>Portfolios</a>
               </Link>
             </li>
 

@@ -12,4 +12,37 @@
     font-size: 0.9rem;
     font-weight: 100;
   }
+
+  &_secondary {
+    background-color: #eee;
+    color: rgba(var(--dark), 0.9);
+    border-radius: 30px;
+    padding: 0.8em 2em;
+    font-size: 0.9rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s var(--ease);
+
+    & > div {
+      width: 16px;
+      height: 16px;
+      margin-left: 5px;
+      background-image: url("https://www.venuslab.co/icons/arrow.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: translate(0, 0);
+      transition: transform 0.3s var(--ease);
+    }
+
+    &:hover {
+      box-shadow: 0 5px 10px rgb(0 0 0 / 12%), 0 5px 5px rgb(0 0 0 / 10%);
+
+      div {
+        transform: translateX(5px);
+      }
+    }
+  }
 }

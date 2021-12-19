@@ -1,14 +1,23 @@
+@import "Responsive.module.scss";
+
 .section {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
+  margin-top: -4%;
 
   &_wrapper {
     height: 100%;
     display: flex;
     align-items: center;
+    @include respond(tablet) {
+      flex-direction: column;
+    }
+  }
 
-    article {
-      flex: 1;
+  &_article {
+    width: 50%;
+    &_content {
+      width: 50%;
     }
   }
 
@@ -17,17 +26,30 @@
     flex-direction: column;
     h2 {
       font-size: 4.5rem;
-      line-height: 1;
+      line-height: 0.9;
       margin: 0.1em 0;
+      margin-top: 0;
+      color: inherit;
     }
 
     span {
       margin-bottom: 1em;
+      color: inherit;
     }
 
     p {
-      line-height: 1.5;
-      font-size: 1.1rem;
+      line-height: 1.4;
+      font-size: 1.2rem;
+      color: rgba(var(--dark), 0.8);
+      margin-bottom: 2em;
+      color: inherit;
+    }
+
+    button {
+      align-self: flex-end;
     }
   }
+}
+
+.services {
 }

@@ -7,3 +7,12 @@ export const ButtonPrimary = ({ children }) => {
     </button>
   );
 };
+
+export const ButtonSecondary = ({ children }) => {
+  return (
+    <button className={`${styles.btn} ${styles.btn_secondary}`}>
+      {children}
+      <div></div>
+    </button>
+  );
+};
