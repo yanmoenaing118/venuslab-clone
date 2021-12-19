@@ -1,9 +1,19 @@
 .header {
-  height: var(--header-height);
-  background-color: rgba(var(--dark), 0.8);
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // margin-top: -var(--header-height);
+  // height: var(--header-height);
+
+  z-index: 9;
+  background-color: rgba(var(--dark), 0.99);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: all 0.5s var(--ease);
 
   &_wrapper {
     width: 100%;

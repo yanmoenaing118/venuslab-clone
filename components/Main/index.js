@@ -1,12 +1,14 @@
+import Hero from "../Hero";
 import Section from "../Section";
+import section from "./../Section/section-data";
+
+console.log(section);
 
 export default function Main() {
   return (
     <main>
-      <Section img_first={true} />
-      <Section />
-      <Section />
-      <Section />
+      <Hero />
+      <Section data={section.inHouse} img_first={false} />
     </main>
   );
 }

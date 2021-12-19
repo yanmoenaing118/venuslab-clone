@@ -2,8 +2,11 @@ import styles from "./../../styles/Header.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import { ButtonPrimary } from "../Button";
+import { useState } from "react";
 
 export default function Header() {
+  const [height, setHeight] = useState(180);
+
   return (
     <header className={styles.header}>
       <div className={styles.header_wrapper}>
