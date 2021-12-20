@@ -8,7 +8,12 @@ export default function Header() {
   const [height, setHeight] = useState(180);
 
   return (
-    <header className={styles.header}>
+    <header
+      className={styles.header}
+      style={{
+        display: "none",
+      }}
+    >
       <div className={styles.header_wrapper}>
         <div className={styles.logo}>
           <Link href="/">

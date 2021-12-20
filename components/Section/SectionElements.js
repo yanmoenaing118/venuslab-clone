@@ -1,29 +1,53 @@
 import styled from "styled-components";
 
+export const MySection = styled.section`
+  padding: 8em 0;
+  background-color: cyan;
+  border-bottom: 1px solid #ccc;
+`;
+
 export const SectionWrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
   display: flex;
-  align-items: center;
-  flex-direction: ${(props) => (props.img_first ? "row-reverse" : "row")};
-
-  @media only screen and (max-width: 768px) {
-    flex-direction: column;
-    flex-direction: ${(props) =>
-      props.img_first ? "column-reverse" : "column"};
-  }
 `;
 
-export const ArticleContent = styled.article`
+export const SectionItem = styled.div`
   flex: 1;
-  @media only screen and (max-width: 768px) {
-    height: 100vh;
-  }
+  border: 1px solid #fff;
 `;
 
-export const ArticleAnimated = styled.article`
-  flex: 1;
-  @media only screen and (max-width: 768px) {
-    height: 100vh;
-  }
+export const SectionContent = styled.div``;
+
+export const SectionContentTitle = styled.h1``;
+
+export const SectionSubTitle = styled.p``;
+
+export const SectionContentPara = styled.p``;
+
+export const SectionAnimated = styled.div``;
+
+export const Animated = styled.div`
+  background-color: white;
+  position: relative;
+`;
+
+export const AnimatedCircle = styled.div`
+  background-color: wheat;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+export const AnimatedImage = styled.img`
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;

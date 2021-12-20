@@ -2,8 +2,13 @@ import { ButtonSecondary } from "../Button";
 import Container from "../Container";
 import styles from "./../../styles/Section.module.scss";
 import {
-  ArticleAnimated,
-  ArticleContent,
+  Animated,
+  AnimatedCircle,
+  AnimatedImage,
+  MySection,
+  SectionAnimated,
+  SectionContent,
+  SectionItem,
   SectionWrapper,
 } from "./SectionElements";
 
@@ -14,48 +19,24 @@ export default function Section({ data, img_first }) {
   // ${img_first ? "row-reverse" : "row"}
   // ${img_first ? "column-reverse" : "column"}
 
-  const fletDirection = "column";
   return (
-    <section
-      className={styles.section}
-      style={{
-        backgroundColor: data.bgColor,
-        clipPath: clipPath,
-      }}
-    >
-      <Container>
-        <SectionWrapper img_first={img_first}>
-          <ArticleContent>
-            <div
-              className={styles.section_content}
-              style={{
-                color: data.color,
-              }}
-            >
-              <div>
-                <img src={data.logo} alt={`${data.title}`} />
-              </div>
-              <h2>{data.title}</h2>
-              <span>{data.subtitle}</span>
-              <p>{data.para}</p>
-
-              <ButtonSecondary>more</ButtonSecondary>
-            </div>
-          </ArticleContent>
-
-          <ArticleAnimated>
-            <div className={styles.section_animate}>
-              <div className={styles.section_animate_circle}></div>
-              <div className={styles.section_animate_img}>
-                <img
-                  src="https://www.venuslab.co/images/case-study/inh.png"
-                  alt={data.title}
-                />
-              </div>
-            </div>
-          </ArticleAnimated>
-        </SectionWrapper>
-      </Container>
-    </section>
+    <MySection>
+      <SectionWrapper>
+        <SectionItem>
+          <SectionContent>{data.para}</SectionContent>
+        </SectionItem>
+        <SectionItem>
+          <SectionAnimated>
+            <Animated>
+              <AnimatedCircle />
+              <AnimatedImage
+                src="https://www.venuslab.co/images/case-study/inh.png"
+                alt="my image"
+              />
+            </Animated>
+          </SectionAnimated>
+        </SectionItem>
+      </SectionWrapper>
+    </MySection>
   );
 }
