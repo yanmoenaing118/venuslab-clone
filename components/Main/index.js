@@ -8,7 +8,7 @@ console.log(section);
 export default function Main() {
   return (
     <main>
-      <Hero />
+      {/* <Hero /> */}
       <Section data={section.inHouse} img_first={false} />
       <Section data={section.mdyRum} img_first={true} />
       <Section data={section.meePyaTike} img_first={false} />
