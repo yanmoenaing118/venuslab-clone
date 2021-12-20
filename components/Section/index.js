@@ -1,13 +1,20 @@
 import { ButtonSecondary } from "../Button";
 import Container from "../Container";
 import styles from "./../../styles/Section.module.scss";
+import {
+  ArticleAnimated,
+  ArticleContent,
+  SectionWrapper,
+} from "./SectionElements";
 
 export default function Section({ data, img_first }) {
   const clipPath = img_first
     ? "polygon(0 0, 100% 8%, 100% 92%, 0 100%)"
     : "polygon(0 8%, 100% 0, 100% 100%, 0 92%)";
+  // ${img_first ? "row-reverse" : "row"}
+  // ${img_first ? "column-reverse" : "column"}
 
-  console.log(clipPath);
+  const fletDirection = "column";
   return (
     <section
       className={styles.section}
@@ -17,15 +24,8 @@ export default function Section({ data, img_first }) {
       }}
     >
       <Container>
-        <div
-          className={styles.section_wrapper}
-          style={{
-            flexDirection: `${img_first ? "row-reverse" : "row"}`,
-          }}
-        >
-          <article
-            className={`${styles.section_article} ${styles.section_article_content} `}
-          >
+        <SectionWrapper img_first={img_first}>
+          <ArticleContent>
             <div
               className={styles.section_content}
               style={{
@@ -41,9 +41,20 @@ export default function Section({ data, img_first }) {
 
               <ButtonSecondary>more</ButtonSecondary>
             </div>
-          </article>
-          <article className={styles.section_article}></article>
-        </div>
+          </ArticleContent>
+
+          <ArticleAnimated>
+            <div className={styles.section_animate}>
+              <div className={styles.section_animate_circle}></div>
+              <div className={styles.section_animate_img}>
+                <img
+                  src="https://www.venuslab.co/images/case-study/inh.png"
+                  alt={data.title}
+                />
+              </div>
+            </div>
+          </ArticleAnimated>
+        </SectionWrapper>
       </Container>
     </section>
   );
