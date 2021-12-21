@@ -5,7 +5,7 @@ import MyServices from "./MyServices";
 export default function Services() {
   return (
     <section className={styles.services}>
-      <div className={styles.services_title}>
+      {/* <div className={styles.services_title}>
         <h2>WHAT WE CAN DO</h2>
         <h2>FOR YOU OR YOUR BUSINESS</h2>
       </div>
@@ -19,7 +19,7 @@ export default function Services() {
         <div>
           <ButtonPrimary>request a quote</ButtonPrimary>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
