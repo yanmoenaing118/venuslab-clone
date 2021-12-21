@@ -4,13 +4,18 @@ export const MySection = styled.section`
   width: 100%;
   overflow: hidden;
 
+  /* margin-top: -4%; */
+
   background-color: ${(props) => props.bgColor};
+  /* clip-path: ${(props) => props.clipPath}; */
+
+  /* -webkit-clip-path:  */
 `;
 export const MySectionWrapper = styled.div`
   margin: auto;
   display: flex;
   flex-direction: ${(props) => (props.img_first ? "row-reverse" : "row")};
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 769px) {
     flex-direction: column-reverse;
   }
 `;
@@ -25,7 +30,7 @@ export const MySectionItem = styled.div`
 
 export const MySectionItemContent = styled.div`
   /* height: 100vh; */
-  padding: 1em;
+
   display: flex;
   align-items: center;
   width: 73.5%;
@@ -34,7 +39,7 @@ export const MySectionItemContent = styled.div`
 
 export const MySectionItemContentImage = styled.img``;
 export const MySectionItemContentTitle = styled.h1`
-  font-size: 3rem;
+  font-size: 4.45rem;
   color: ${({ color }) => color};
 `;
 export const MySectionItemContentSubtitle = styled.p`
@@ -57,14 +62,12 @@ export const MySectionItemAnimated = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 768px) {
-    height: 60vh;
-  }
+  /* background-color: purple; */
 `;
 
 export const MySectionItemAnimatedCircle = styled.div`
-  width: 430px;
-  height: 430px;
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
   position: relative;
   opacity: 0;
@@ -73,16 +76,6 @@ export const MySectionItemAnimatedCircle = styled.div`
 
   transition: all 0.2s ease;
   overflow: hidden;
-
-  @media screen and (max-width: 768px) {
-    width: 300px;
-    height: 300px;
-  }
-
-  @media screen and (max-width: 480px) {
-    width: 220px;
-    height: 220px;
-  }
 
   /* transform: scale(0); */
 
@@ -99,10 +92,15 @@ export const MySectionItemAnimatedCircle = styled.div`
 `;
 
 export const MySectionItemAnimatedImage = styled.div`
-  transition: transform 0.3s ease;
-  width: 560px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 
-  height: 560px;
+  background-image: ${(props) => `url(${props.bgImage})`};
+  transition: transform 0.3s ease;
+  width: 70%;
+
+  height: 70%;
 
   position: absolute;
 
@@ -126,10 +124,4 @@ export const MySectionItemAnimatedImage = styled.div`
         right: 100%;
         top: 100%;
       `}
-
-  @media screen and (max-width: 768px) {
-    width: 400px;
-
-    height: 400px;
-  }
 `;

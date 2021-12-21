@@ -25,7 +25,7 @@ export default function Section({
   bgColor,
   color,
 }) {
-  const { ref, inView, entry } = useInView({
+  const { ref, entry } = useInView({
     threshold: [
       0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31,
       0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43,
@@ -36,6 +36,10 @@ export default function Section({
       0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99,
     ],
   });
+
+  const clipPath = img_first
+    ? `polygon(0 0, 100% 7%, 100% 93%, 0 100%);`
+    : `polygon(0 7%, 100% 0, 100% 100%, 0 94%)`;
 
   let previousY = 0;
   let previousRatio = 0;
@@ -108,7 +112,7 @@ export default function Section({
   // const {}
 
   return (
-    <MySection bgColor={bgColor}>
+    <MySection bgColor={bgColor} clipPath={clipPath}>
       <MySectionWrapper img_first={img_first}>
         <MySectionItem>
           <MySectionItemContent>
@@ -137,8 +141,9 @@ export default function Section({
             <MySectionItemAnimatedImage
               className="my-image"
               img_first={img_first}
+              bgImage={animatedImg}
             >
-              <img src={animatedImg} alt={title} />
+              {/* <img src={animatedImg} alt={title} /> */}
             </MySectionItemAnimatedImage>
           </MySectionItemAnimated>
         </MySectionItem>

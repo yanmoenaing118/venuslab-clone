@@ -16,6 +16,10 @@
     h2 {
       color: rgba(var(--primary));
       font-size: 2.8rem;
+
+      @media screen and (max-width: 768px) {
+        font-size: 1.8rem;
+      }
     }
   }
 
@@ -46,7 +50,6 @@
       color: #fff;
       font-size: 2rem;
       margin: 1.3em 0 0.8em 0;
-
       text-align: center;
     }
     p {
@@ -69,6 +72,10 @@
       font-size: 5rem;
       color: rgba(var(--primary));
       font-weight: 300;
+
+      @media screen and (max-width: 768px) {
+        font-size: 3rem;
+      }
     }
     p {
       text-align: center;
@@ -76,6 +83,17 @@
       font-size: 1.2rem;
       margin: 0.8em 0 1.2em 0;
       padding: 0 4em;
+      @media screen and (max-width: 768px) {
+        font-size: 1rem;
+      }
     }
+
+    @media screen and (max-width: 768px) {
+      width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: -20%;
   }
 }

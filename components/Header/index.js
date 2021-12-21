@@ -1,21 +1,14 @@
-import styles from "./../../styles/Header.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import { ButtonPrimary } from "../Button";
-import { useState } from "react";
+import { MyHeader, MyHeaderLogo, MyHeaderWrapper } from "./HeaderElements";
+import Navigation from "../Navigation";
+import MobileMenu from "../MobileMenu";
 
 export default function Header() {
-  const [height, setHeight] = useState(180);
-
   return (
-    <header
-      className={styles.header}
-      style={{
-        display: "none",
-      }}
-    >
-      <div className={styles.header_wrapper}>
-        <div className={styles.logo}>
+    <MyHeader>
+      <MyHeaderWrapper>
+        <MyHeaderLogo>
           <Link href="/">
             <a>
               <Image
@@ -25,46 +18,10 @@ export default function Header() {
               />
             </a>
           </Link>
-        </div>
-        <nav className={styles.navigation}>
-          <ul>
-            <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a>About</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog/hello-world">
-                <a>Services</a>
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/blog/hello-world">
-                <a>Portfolios</a>
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/blog/hello-world">
-                <a>Blog</a>
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/blog/hello-world">
-                <a>Contact</a>
-              </Link>
-            </li>
-          </ul>
-          <ButtonPrimary>request a quote</ButtonPrimary>
-        </nav>
-      </div>
-    </header>
+        </MyHeaderLogo>
+        <Navigation />
+        <MobileMenu />
+      </MyHeaderWrapper>
+    </MyHeader>
   );
 }

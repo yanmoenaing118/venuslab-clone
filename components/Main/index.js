@@ -6,12 +6,12 @@ import sections from "./../Section/section-data";
 export default function Main() {
   return (
     <main>
-      {/* <Hero /> */}
+      <Hero />
       <Section {...sections.inHouse} img_first={false} />
       <Section {...sections.mdyRum} img_first={true} />
       <Section {...sections.meePyaTike} img_first={false} />
       <Section {...sections.mApn} img_first={true} />
-      {/* <Services /> */}
+      <Services />
     </main>
   );
 }
