@@ -40,8 +40,8 @@ export default function Section({
   });
 
   const clipPath = img_first
-    ? `polygon(0 0, 100% 7%, 100% 93%, 0 100%);`
-    : `polygon(0 7%, 100% 0, 100% 100%, 0 94%)`;
+    ? `polygon(0 0, 100% 4%, 100% 96%, 0 100%);`
+    : `polygon(0 4%, 100% 0, 100% 100%, 0 96%)`;
 
   let previousY = 0;
   let previousRatio = 0;

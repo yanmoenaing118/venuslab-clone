@@ -154,6 +154,16 @@ export const MySectionItemAnimatedCircle = styled.div`
     height: 280px;
   }
 
+  @media screen and (max-width: 560px) {
+    width: 240px;
+    height: 240px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 200px;
+    height: 200px;
+  }
+
   /* transform: scale(0); */
 
   /* ${({ img_first }) =>

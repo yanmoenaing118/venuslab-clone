@@ -13,7 +13,7 @@ export const MyHeader = styled.header`
   align-items: center;
   justify-content: center;
 
-  height: ${({ open }) => (!open ? `88px` : `66px`)};
+  height: ${({ open }) => (!open ? `66px` : `40px`)};
   transition: height 0.34s ease;
 `;
 
