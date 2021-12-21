@@ -50,7 +50,7 @@ export default function Section({
     if (!entry) return;
     const circle = entry.target.querySelector(".my-circle");
     const myImage = entry.target.querySelector(".my-image");
-    console.log(myImage);
+
     const currentY = entry.boundingClientRect.y;
     const currentRatio = entry.intersectionRatio;
     const isIntersecting = entry.isIntersecting;
@@ -58,11 +58,8 @@ export default function Section({
     let { width, height } = entry.target.getBoundingClientRect();
     let { width: boxW, height: boxH } = myImage.getBoundingClientRect();
 
-    console.log(width, height);
-
     let tX = (width / 2 + boxW / 2) * currentRatio;
     let tY = (height / 2 + boxH / 2) * currentRatio;
-    console.log(`tX: ${tX}, tY: ${tY}`);
 
     circle.style.transform = `translate(-50%, -50%) scale(${entry.intersectionRatio})`;
     circle.style.opacity = `${entry.intersectionRatio}`;
@@ -74,14 +71,6 @@ export default function Section({
         circle.style.opacity = "1";
         tX = width / 2 + boxW / 2;
         tY = height / 2 + boxH / 2;
-      } else {
-        console.log("Scrolling down leave");
-      }
-    } else if (currentY > previousY && isIntersecting) {
-      if (currentRatio < previousRatio) {
-        console.log("Scrolling up leave");
-      } else {
-        console.log("Scrolling up enter");
       }
     }
 
@@ -91,7 +80,6 @@ export default function Section({
       } else {
         myImage.style.transform = `translate(${tX}px, -${tY}px)`;
       }
-      // myImage.style.transform = `translate(-${tX}px, -${tY}px)`;
     }
 
     previousY = currentY;

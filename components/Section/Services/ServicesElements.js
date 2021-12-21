@@ -29,6 +29,10 @@ export const MyServicesGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
   grid-gap: 3em;
   margin-top: 4em;
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 `;
 
 export const MyServiceItem = styled.div`
@@ -65,6 +69,9 @@ export const LetTalk = styled.div`
   margin-top: 4.5em;
 
   width: 50%;
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 export const LetTalkH1 = styled.h1`
@@ -74,6 +81,10 @@ export const LetTalkH1 = styled.h1`
 
   @media screen and (max-width: 768px) {
     font-size: 3rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 1rem;
   }
 `;
 

@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const MyNavigation = styled.nav`
   display: flex;
   align-items: center;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
 `;
 
 export const MyNavigationList = styled.ul`

@@ -8,6 +8,9 @@ export const MyMobileMenu = styled.div`
   justify-content: space-between;
   cursor: pointer;
   display: none;
+  position: absolute;
+  top: 21px;
+  right: 16px;
 
   @media screen and (max-width: 920px) {
     display: flex;

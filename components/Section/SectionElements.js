@@ -15,7 +15,7 @@ export const MySectionWrapper = styled.div`
   margin: auto;
   display: flex;
   flex-direction: ${(props) => (props.img_first ? "row-reverse" : "row")};
-  @media screen and (max-width: 769px) {
+  @media screen and (max-width: 920px) {
     flex-direction: column-reverse;
   }
 `;
@@ -35,6 +35,11 @@ export const MySectionItemContent = styled.div`
   align-items: center;
   width: 73.5%;
   margin: auto;
+
+  @media screen and (max-width: 920px) {
+    width: 90%;
+    padding-bottom: 10em;
+  }
 `;
 
 export const MySectionItemContentImage = styled.img``;
@@ -56,7 +61,7 @@ export const MySectionItemContentPara = styled.p`
 export const MySectionItemAnimated = styled.div`
   /* max-width: 300; */
   overflow: hidden;
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   margin: auto;
   /* 
@@ -69,9 +74,8 @@ export const MySectionItemAnimated = styled.div`
 `;
 
 export const MySectionItemAnimatedCircle = styled.div`
-  width: 50%;
-
-  height: 50%;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   position: relative;
   opacity: 0;
@@ -108,9 +112,9 @@ export const MySectionItemAnimatedImage = styled.div`
 
   background-image: ${(props) => `url(${props.bgImage})`};
   transition: transform 0.3s ease;
-  width: 70%;
+  width: 80%;
 
-  height: 70%;
+  height: 80%;
 
   position: absolute;
 

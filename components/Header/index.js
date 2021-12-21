@@ -3,12 +3,15 @@ import Image from "next/image";
 import { MyHeader, MyHeaderLogo, MyHeaderWrapper } from "./HeaderElements";
 import Navigation from "../Navigation";
 import MobileMenu from "../MobileMenu";
+import { useSelector } from "react-redux";
 
 export default function Header() {
+  const open = useSelector((state) => state.menu.open);
+
   return (
-    <MyHeader>
+    <MyHeader open={open}>
       <MyHeaderWrapper>
-        <MyHeaderLogo>
+        <MyHeaderLogo open={open}>
           <Link href="/">
             <a>
               <Image

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MyHero = styled.section`
   width: 100%;
-  height: calc(100vh - var(--header-height));
+  height: 100vh;
   background-image: linear-gradient(
     to right bottom,
     rgba(var(--dark), 0.99),
