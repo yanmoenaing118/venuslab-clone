@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { ButtonSecondary } from "../Button";
 import {
   MySection,
   MySectionItem,
@@ -12,6 +13,7 @@ import {
   MySectionItemContentTitle,
   MySectionItemContentSubtitle,
   MySectionItemContentPara,
+  MySectionItemContentBtn,
 } from "./SectionElements";
 
 export default function Section({
@@ -93,8 +95,15 @@ export default function Section({
       <MySectionWrapper img_first={img_first}>
         <MySectionItem>
           <MySectionItemContent>
-            <div>
-              <MySectionItemContentImage src={logo} alt={title} />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <div>
+                <MySectionItemContentImage src={logo} alt={title} />
+              </div>
               <MySectionItemContentTitle color={color}>
                 {title}
               </MySectionItemContentTitle>
@@ -105,6 +114,9 @@ export default function Section({
               <MySectionItemContentPara color={color}>
                 {para}
               </MySectionItemContentPara>
+              <MySectionItemContentBtn>
+                <ButtonSecondary>more</ButtonSecondary>
+              </MySectionItemContentBtn>
             </div>
           </MySectionItemContent>
         </MySectionItem>

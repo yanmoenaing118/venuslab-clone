@@ -19,7 +19,10 @@ export const MyHeroWrapper = styled.div`
   position: relative;
 
   @media screen and (max-width: 920px) {
-    padding: 0 3em;
+    padding: 0 2rem;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 0 1rem;
   }
 `;
 
@@ -41,17 +44,22 @@ export const MyHeroTitle = styled.h1`
 
 export const MyHeroTitleSmall = styled.small`
   font-weight: 100;
-  font-size: 10rem;
+  font-size: 9rem;
   font-weight: 200;
 
   @media screen and (max-width: 920px) {
-    font-size: 18vw;
+    font-size: 6rem;
+    letter-spacing: -1px;
+  }
+
+  @media screen and (max-width: 560px) {
+    font-size: 14vw;
     letter-spacing: -1px;
   }
 `;
 
 export const MyHeroTitleStrong = styled.strong`
-  font-size: 12rem;
+  font-size: 11rem;
   font-weight: 700;
   @media screen and (max-width: 920px) {
     font-size: 20vw;

@@ -45,7 +45,7 @@ export const MySectionWrapper = styled.div`
   margin: auto;
   display: flex;
   flex-direction: ${(props) => (props.img_first ? "row-reverse" : "row")};
-  @media screen and (max-width: 920px) {
+  @media screen and (max-width: 1000px) {
     flex-direction: column-reverse;
   }
 `;
@@ -63,21 +63,22 @@ export const MySectionItemContent = styled.div`
 
   display: flex;
   align-items: center;
-  width: 74%;
+  width: 80%;
   margin: auto;
   padding: 10em 0;
 
-  @media screen and (max-width: 1000px) {
+  /* @media screen and (max-width: 1000px) {
     padding: 12em 0;
     width: 88%;
-  }
+  } */
 
   @media screen and (max-width: 950px) {
     /* padding: 12rem 0;
     width: 95%; */
   }
 
-  @media screen and (max-width: 920px) {
+  @media screen and (max-width: 1000px) {
+    width: 95%;
     padding-top: 0;
     padding-bottom: 8em;
   }
@@ -88,23 +89,28 @@ export const MySectionItemContentTitle = styled.h1`
   font-size: 4.45rem;
   color: ${({ color }) => color};
 
+  @media screen and (max-width: 1000px) {
+    font-size: 3rem;
+  }
+
   @media screen and (max-width: 896px) {
-    font-size: 3.8rem;
+    font-size: 2.6rem;
   }
 `;
 export const MySectionItemContentSubtitle = styled.p`
   font-weight: lighter;
   margin: 0.75em 0;
   color: ${({ color }) => color};
-
-  @
 `;
 export const MySectionItemContentPara = styled.p`
   font-weight: 400;
   font-size: 1.1rem;
   color: ${({ color }) => color};
 `;
-
+export const MySectionItemContentBtn = styled.div`
+  margin-top: 1.2rem;
+  align-self: flex-end;
+`;
 export const MySectionItemAnimated = styled.div`
   /* max-width: 300; */
   overflow: hidden;
@@ -118,6 +124,11 @@ export const MySectionItemAnimated = styled.div`
 
   /* background-color: purple; */
   position: relative;
+
+  @media screen and (max-width: 1000px) {
+    height: 60vh;
+    padding-top: 14rem;
+  }
 `;
 
 export const MySectionItemAnimatedCircle = styled.div`
@@ -137,6 +148,11 @@ export const MySectionItemAnimatedCircle = styled.div`
   left: 50%;
 
   transform: translate(-50%, -50%) scale(0);
+
+  @media screen and (max-width: 1000px) {
+    width: 280px;
+    height: 280px;
+  }
 
   /* transform: scale(0); */
 
