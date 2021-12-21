@@ -20,10 +20,11 @@ export default function Services() {
       </ServicesSectionHeader>
       <MyServices />
       <LetTalk>
-        <LetTalkH1>LET'S TALK</LetTalkH1>
+        <LetTalkH1>{"LET'S TALK"}</LetTalkH1>
         <LetTalkPara>
-          Wheather you're interested in working with us or for us, we're always
-          happy to chat.
+          {
+            "Wheather you're interested in working with us or for us, we're always          happy to chat."
+          }
         </LetTalkPara>
         <ButtonPrimary>request a quote</ButtonPrimary>
       </LetTalk>
