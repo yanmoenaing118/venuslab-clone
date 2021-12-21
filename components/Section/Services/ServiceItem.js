@@ -1,14 +1,9 @@
 import styles from "./../../../styles/Section.module.scss";
-
+import Image from "next/image";
 export default function ServiceItem({ data }) {
   return (
     <div className={styles.services_item}>
-      <div className={styles.services_item_img}>
-        <img src={data.img} alt={data.title} />
-      </div>
-      <h3>{data.title}</h3>
-
-      <p>{data.para}</p>
+      <h1>hello</h1>
     </div>
   );
 }
