@@ -30,7 +30,10 @@ export const MyHeroTextbox = styled.div`
   margin: auto;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transition: all 2s ease;
+  transform: ${({ loaded }) =>
+    loaded ? "translateY(-50%)" : "translateY(-10%)"};
+  opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 `;
 
 export const MyHeroTitle = styled.h1`

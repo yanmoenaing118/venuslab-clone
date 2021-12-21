@@ -13,11 +13,27 @@ const menuSlice = createSlice({
   },
 });
 
+const animationSlice = createSlice({
+  name: "animation",
+  initialState: {
+    loaded: false,
+  },
+
+  reducers: {
+    triggerLoad: (state) => {
+      state.loaded = true;
+    },
+  },
+});
+
 export const { toggle } = menuSlice.actions;
+
+export const { triggerLoad } = animationSlice.actions;
 
 const store = configureStore({
   reducer: {
     menu: menuSlice.reducer,
+    animation: animationSlice.reducer,
   },
 });
 

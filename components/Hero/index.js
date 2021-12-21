@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import Container from "../Container";
 import styles from "./../../styles/Hero.module.scss";
 import {
@@ -10,10 +11,12 @@ import {
   MyHeroPara,
 } from "./HeroElements";
 export default function Hero() {
+  const loaded = useSelector((state) => state.animation.loaded);
+  console.log(loaded);
   return (
     <MyHero>
       <MyHeroWrapper>
-        <MyHeroTextbox>
+        <MyHeroTextbox loaded={loaded}>
           <MyHeroTitle>
             <MyHeroTitleSmall>Idea to</MyHeroTitleSmall>
             <MyHeroTitleStrong>Impact</MyHeroTitleStrong>
