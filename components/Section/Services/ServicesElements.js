@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ServicesSection = styled.section`
-  margin-top: -4%;
+  /* margin-top: -4%; */
   padding: 8rem 0;
   background-image: url("https://www.venuslab.co/images/home-banner.jpg");
 
@@ -54,4 +54,36 @@ export const MyServiceItemPara = styled.p`
   color: #fff;
   font-size: 1.2rem;
   padding: 0 0.6em;
+`;
+
+export const LetTalk = styled.div`
+  margin: auto;
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4.5em;
+
+  width: 50%;
+`;
+
+export const LetTalkH1 = styled.h1`
+  font-size: 5rem;
+  color: rgba(var(--primary));
+  font-weight: 300;
+
+  @media screen and (max-width: 768px) {
+    font-size: 3rem;
+  }
+`;
+
+export const LetTalkPara = styled.p`
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0.8em 0 1.2em 0;
+  padding: 0 4em;
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;

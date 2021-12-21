@@ -54,20 +54,24 @@ export const MySectionItemContentPara = styled.p`
 `;
 
 export const MySectionItemAnimated = styled.div`
-  height: 100vh;
-  width: 100%;
+  /* max-width: 300; */
   overflow: hidden;
-
+  height: 80vh;
+  width: 100%;
+  margin: auto;
+  /* 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 
   /* background-color: purple; */
+  position: relative;
 `;
 
 export const MySectionItemAnimatedCircle = styled.div`
-  width: 380px;
-  height: 380px;
+  width: 50%;
+
+  height: 50%;
   border-radius: 50%;
   position: relative;
   opacity: 0;
@@ -77,13 +81,19 @@ export const MySectionItemAnimatedCircle = styled.div`
   transition: all 0.2s ease;
   overflow: hidden;
 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) scale(0);
+
   /* transform: scale(0); */
 
   /* ${({ img_first }) =>
     img_first
       ? `
 
-  transform: translate(-50%, -50%);
+
   `
       : `
 

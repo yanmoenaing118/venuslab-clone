@@ -60,26 +60,17 @@ export default function Section({
 
     console.log(width, height);
 
-    // let tX = width / 2 + boxW / 2;
-    // let tY = height / 2 + boxH / 2;
     let tX = (width / 2 + boxW / 2) * currentRatio;
     let tY = (height / 2 + boxH / 2) * currentRatio;
     console.log(`tX: ${tX}, tY: ${tY}`);
 
-    // const dir = img_first
-    //   ? `translate(${100 * currentRatio}px, ${100 * currentRatio}px);`
-    //   : `translate(-${100 * currentRatio}px, ${100 * currentRatio}px);`;
-
-    circle.style.transform = `scale(${entry.intersectionRatio})`;
+    circle.style.transform = `translate(-50%, -50%) scale(${entry.intersectionRatio})`;
     circle.style.opacity = `${entry.intersectionRatio}`;
-    // myImage.style.transform = `translate(${entry.intersectionRatio * 800}px, ${
-    //   entry.intersectionRatio * 800
-    // }px)`;
-    // Scrolling down/up
+
     if (currentY < previousY) {
       if (currentRatio > previousRatio && isIntersecting) {
         console.log("Scrolling down enter");
-        circle.style.transform = `scale(1)`;
+        circle.style.transform = `translate(-50%, -50%) scale(1)`;
         circle.style.opacity = "1";
         tX = width / 2 + boxW / 2;
         tY = height / 2 + boxH / 2;
@@ -90,8 +81,6 @@ export default function Section({
       if (currentRatio < previousRatio) {
         console.log("Scrolling up leave");
       } else {
-        // tX = width / 2 + boxW / 2;
-        // tY = height / 2 + boxH / 2;
         console.log("Scrolling up enter");
       }
     }

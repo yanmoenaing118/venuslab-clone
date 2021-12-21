@@ -1,4 +1,3 @@
-import styles from "./../../../styles/Section.module.scss";
 import Image from "next/image";
 import {
   MyServiceItem,
