@@ -31,16 +31,15 @@ export const MyHeaderWrapper = styled.div`
 
 export const MyHeaderLogo = styled.div`
   color: #fff;
-  max-width: 124px;
-  min-width: 100px;
+  width: 148px;
   padding: 0.34em 0;
   /* margin-top: -0.1em; */
   position: absolute;
   /* top: px; */
-  top: ${({ open }) => (!open ? `20px` : `0`)};
-  left: ${({ open }) => (!open ? `50%` : `16px`)};
+  top: ${({ open }) => (open ? `20px` : `0px`)};
+  left: ${({ open }) => (open ? `50%` : `16px`)};
 
-  transform: ${({ open }) => (!open ? `translateX(-50%)` : `translateX(0)`)};
+  transform: ${({ open }) => (open ? `translateX(-50%)` : `translateX(0)`)};
 
   transition: all 0.4s ease;
 

@@ -9,8 +9,10 @@ export const MyMobileMenu = styled.div`
   cursor: pointer;
   display: none;
   position: absolute;
-  top: 21px;
+  top: 50%;
   right: 16px;
+
+  transform: translateY(-50%);
 
   @media screen and (max-width: 920px) {
     display: flex;

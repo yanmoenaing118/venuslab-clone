@@ -12,6 +12,7 @@ export const MyHero = styled.section`
 `;
 
 export const MyHeroWrapper = styled.div`
+  padding: 0 1em;
   max-width: 1300px;
   height: 100%;
   margin: auto;

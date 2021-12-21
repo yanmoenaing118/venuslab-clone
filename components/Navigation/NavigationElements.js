@@ -13,7 +13,7 @@ export const MyNavigationList = styled.ul`
   list-style-type: none;
   display: flex;
   align-items: center;
-  margin-right: 3.4em;
+
   li {
     margin-left: 2.8em;
     a {
@@ -23,7 +23,7 @@ export const MyNavigationList = styled.ul`
       align-items: center;
       flex-direction: column;
       text-transform: uppercase;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       line-height: 1;
 
       &::after {
@@ -40,6 +40,10 @@ export const MyNavigationList = styled.ul`
         &::after {
           width: 90%;
         }
+      }
+
+      @media screen and (max-width: 1040px) {
+        font-size: 0.85rem;
       }
     }
   }

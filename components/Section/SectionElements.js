@@ -4,12 +4,42 @@ export const MySection = styled.section`
   width: 100%;
   overflow: hidden;
 
-  /* margin-top: -4%; */
+  margin-top: -4.5%;
 
   background-color: ${(props) => props.bgColor};
-  /* clip-path: ${(props) => props.clipPath}; */
+  clip-path: ${(props) => props.clipPath};
 
-  /* -webkit-clip-path:  */
+  @media screen and (max-width: 1000px) {
+    margin-top: -7%;
+  }
+
+  @media screen and (max-width: 920px) {
+    margin-top: -8%;
+  }
+
+  @media screen and (max-width: 896px) {
+    margin-top: -10%;
+  }
+
+  @media screen and (max-width: 750px) {
+    margin-top: -12%;
+  }
+
+  @media screen and (max-width: 650px) {
+    margin-top: -14%;
+  }
+
+  @media screen and (max-width: 580px) {
+    margin-top: -16%;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-top: -19%;
+  }
+
+  @media screen and (max-width: 320px) {
+    margin-top: -26%;
+  }
 `;
 export const MySectionWrapper = styled.div`
   margin: auto;
@@ -33,12 +63,23 @@ export const MySectionItemContent = styled.div`
 
   display: flex;
   align-items: center;
-  width: 73.5%;
+  width: 74%;
   margin: auto;
+  padding: 10em 0;
+
+  @media screen and (max-width: 1000px) {
+    padding: 12em 0;
+    width: 88%;
+  }
+
+  @media screen and (max-width: 950px) {
+    /* padding: 12rem 0;
+    width: 95%; */
+  }
 
   @media screen and (max-width: 920px) {
-    width: 90%;
-    padding-bottom: 10em;
+    padding-top: 0;
+    padding-bottom: 8em;
   }
 `;
 
@@ -46,11 +87,17 @@ export const MySectionItemContentImage = styled.img``;
 export const MySectionItemContentTitle = styled.h1`
   font-size: 4.45rem;
   color: ${({ color }) => color};
+
+  @media screen and (max-width: 896px) {
+    font-size: 3.8rem;
+  }
 `;
 export const MySectionItemContentSubtitle = styled.p`
   font-weight: lighter;
   margin: 0.75em 0;
   color: ${({ color }) => color};
+
+  @
 `;
 export const MySectionItemContentPara = styled.p`
   font-weight: 400;

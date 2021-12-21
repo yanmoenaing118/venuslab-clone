@@ -5,7 +5,6 @@ import {
   MobileRequest,
 } from "./MobileNavigationElements";
 
-import { ButtonPrimary } from "../Button";
 import { useSelector } from "react-redux";
 
 export default function MobileNavigation() {

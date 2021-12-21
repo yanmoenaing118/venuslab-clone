@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
 export const ServicesSection = styled.section`
-  /* margin-top: -4%; */
-  padding: 8rem 0;
+  margin-top: -8.5%;
+  padding: 9rem 0;
   background-image: url("https://www.venuslab.co/images/home-banner.jpg");
 
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media screen and (max-width: 780px) {
+    margin-top: -10%;
+  }
 `;
 
 export const ServicesSectionHeader = styled.div`

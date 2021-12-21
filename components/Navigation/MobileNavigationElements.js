@@ -10,7 +10,8 @@ export const MobileNav = styled.nav`
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  transform: ${(props) => (props.open ? `translateY(-100%)` : `translateY(0)`)};
+  transform: ${(props) =>
+    props.open ? `translateY(0%)` : `translateY(-100%)`};
   transition: transform 0.34s ease-in;
 `;
 
@@ -24,7 +25,9 @@ export const MobileNavList = styled.ul`
 
   li {
     margin-bottom: 2em;
+
     a {
+      display: block;
       font-size: 1.65rem;
       text-decoration: none;
       color: #fff;
