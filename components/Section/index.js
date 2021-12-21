@@ -1,39 +1,31 @@
-import { useEffect, useRef } from "react";
-import { ButtonSecondary } from "../Button";
-import Container from "../Container";
-import styles from "./../../styles/Section.module.scss";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import {
-  Animated,
-  AnimatedCircle,
-  AnimatedImage,
   MySection,
-  SectionAnimated,
-  SectionContent,
-  SectionContentLogo,
-  SectionContentLogoImage,
-  SectionContentPara,
-  SectionContentSubTitle,
-  SectionContentTitle,
-  SectionItem,
-  SectionWrapper,
-  SectionContentButton,
+  MySectionItem,
+  MySectionItemContent,
+  MySectionItemAnimated,
+  MySectionItemAnimatedCircle,
+  MySectionWrapper,
+  MySectionItemAnimatedImage,
+  MySectionItemContentImage,
+  MySectionItemContentTitle,
+  MySectionItemContentSubtitle,
+  MySectionItemContentPara,
 } from "./SectionElements";
 
-export default function Section({ data, img_first }) {
-  const clipPath = img_first
-    ? "polygon(0 0, 100% 6%, 100% 94%, 0 100%)"
-    : "polygon(0 6%, 100% 0, 100% 100%, 0 94%)";
-
-  const animatedElRef = useRef();
-
-  let currentY = 0;
-  let previousY = 0;
-  let previousRatio = 0;
-
-  let tX = 0;
-  let tY = 0;
-
-  const observerOpts = {
+export default function Section({
+  title,
+  subtitle,
+  para,
+  animatedImg,
+  logo,
+  circleBg,
+  img_first,
+  bgColor,
+  color,
+}) {
+  const { ref, inView, entry } = useInView({
     threshold: [
       0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31,
       0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43,
@@ -43,87 +35,114 @@ export default function Section({ data, img_first }) {
       0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91,
       0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99,
     ],
-  };
-
-  const observerCb = function observerCb(entries) {
-    entries.forEach((entry) => {
-      const target = entry.target;
-      const circle = target.querySelector("div");
-      const img = target.querySelector("img");
-      const { width: boxW, height: boxH } = img.getBoundingClientRect();
-      const { width, height } = target.getBoundingClientRect();
-      // console.log(target.getBoundingClientRect());
-
-      currentY = entry.boundingClientRect.y;
-      const isIntersecting = entry.isIntersecting;
-      const currentRatio = entry.intersectionRatio;
-
-      tX = (width / 2 + boxW / 2) * currentRatio;
-      tY = (height / 2 + boxH / 2) * currentRatio;
-
-      if (currentY < previousY) {
-        if (currentRatio > previousRatio && isIntersecting) {
-          console.log("Scrolling down enter");
-        } else {
-          tX = width / 2 + boxW / 2;
-          tY = height / 2 + boxH / 2;
-          console.log('"Scrolling down leave"');
-        }
-      } else if (currentY > previousY && isIntersecting) {
-        if (currentRatio < previousRatio) {
-          console.log("Scrolling up leave");
-        } else {
-          tX = width / 2 + boxW / 2;
-          tY = height / 2 + boxH / 2;
-          console.log("Scrolling up enter");
-        }
-      }
-
-      previousY = currentY;
-      previousRatio = currentRatio;
-
-      if (isIntersecting) {
-        circle.style.transform = `translate(-50%, -50%) scale(${currentRatio})`;
-        img.style.transform = `translate(${tX}px,${tY}px)`;
-      }
-
-      console.log(`tX: ${tX}, tY: ${tY}`);
-      console.log(`target: ${width}, ${height}`);
-      console.log(`img: ${boxW}, ${boxH}`);
-    });
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(observerCb, observerOpts);
-
-    observer.observe(animatedElRef.current);
   });
 
+  let previousY = 0;
+  let previousRatio = 0;
+
+  // const [ratio, setRatio] = entry.intersectionRatio;
+
+  useEffect(() => {
+    if (!entry) return;
+    const circle = entry.target.querySelector(".my-circle");
+    const myImage = entry.target.querySelector(".my-image");
+    console.log(myImage);
+    const currentY = entry.boundingClientRect.y;
+    const currentRatio = entry.intersectionRatio;
+    const isIntersecting = entry.isIntersecting;
+
+    let { width, height } = entry.target.getBoundingClientRect();
+    let { width: boxW, height: boxH } = myImage.getBoundingClientRect();
+
+    console.log(width, height);
+
+    // let tX = width / 2 + boxW / 2;
+    // let tY = height / 2 + boxH / 2;
+    let tX = (width / 2 + boxW / 2) * currentRatio;
+    let tY = (height / 2 + boxH / 2) * currentRatio;
+    console.log(`tX: ${tX}, tY: ${tY}`);
+
+    // const dir = img_first
+    //   ? `translate(${100 * currentRatio}px, ${100 * currentRatio}px);`
+    //   : `translate(-${100 * currentRatio}px, ${100 * currentRatio}px);`;
+
+    circle.style.transform = `scale(${entry.intersectionRatio})`;
+    circle.style.opacity = `${entry.intersectionRatio}`;
+    // myImage.style.transform = `translate(${entry.intersectionRatio * 800}px, ${
+    //   entry.intersectionRatio * 800
+    // }px)`;
+    // Scrolling down/up
+    if (currentY < previousY) {
+      if (currentRatio > previousRatio && isIntersecting) {
+        console.log("Scrolling down enter");
+        circle.style.transform = `scale(1)`;
+        circle.style.opacity = "1";
+        tX = width / 2 + boxW / 2;
+        tY = height / 2 + boxH / 2;
+      } else {
+        console.log("Scrolling down leave");
+      }
+    } else if (currentY > previousY && isIntersecting) {
+      if (currentRatio < previousRatio) {
+        console.log("Scrolling up leave");
+      } else {
+        // tX = width / 2 + boxW / 2;
+        // tY = height / 2 + boxH / 2;
+        console.log("Scrolling up enter");
+      }
+    }
+
+    if (isIntersecting) {
+      if (!img_first) {
+        myImage.style.transform = `translate(-${tX}px, -${tY}px)`;
+      } else {
+        myImage.style.transform = `translate(${tX}px, -${tY}px)`;
+      }
+      // myImage.style.transform = `translate(-${tX}px, -${tY}px)`;
+    }
+
+    previousY = currentY;
+    previousRatio = currentRatio;
+  }, [entry]);
+
+  // const {}
+
   return (
-    <MySection bgColor={data.bgColor} clipPath={clipPath}>
-      <SectionWrapper img_first={img_first}>
-        <SectionItem>
-          <SectionContent color={data.color}>
-            <SectionContentLogo>
-              <SectionContentLogoImage src={data.logo} alt={data.title} />
-            </SectionContentLogo>
-            <SectionContentTitle>{data.title}</SectionContentTitle>
-            <SectionContentSubTitle>{data.subtitle}</SectionContentSubTitle>
-            <SectionContentPara>{data.para}</SectionContentPara>
-            <SectionContentButton>
-              <ButtonSecondary>more</ButtonSecondary>
-            </SectionContentButton>
-          </SectionContent>
-        </SectionItem>
-        <SectionItem>
-          <SectionAnimated>
-            <Animated ref={animatedElRef}>
-              <AnimatedCircle bgColor={data.circleBg} />
-              <AnimatedImage src={data.animatedImg} alt={data.title} />
-            </Animated>
-          </SectionAnimated>
-        </SectionItem>
-      </SectionWrapper>
+    <MySection bgColor={bgColor}>
+      <MySectionWrapper img_first={img_first}>
+        <MySectionItem>
+          <MySectionItemContent>
+            <div>
+              <MySectionItemContentImage src={logo} alt={title} />
+              <MySectionItemContentTitle color={color}>
+                {title}
+              </MySectionItemContentTitle>
+              <MySectionItemContentSubtitle color={color}>
+                {subtitle}
+              </MySectionItemContentSubtitle>
+
+              <MySectionItemContentPara color={color}>
+                {para}
+              </MySectionItemContentPara>
+            </div>
+          </MySectionItemContent>
+        </MySectionItem>
+        <MySectionItem>
+          <MySectionItemAnimated ref={ref}>
+            <MySectionItemAnimatedCircle
+              className="my-circle"
+              img_first={img_first}
+              circleBg={circleBg}
+            />
+            <MySectionItemAnimatedImage
+              className="my-image"
+              img_first={img_first}
+            >
+              <img src={animatedImg} alt={title} />
+            </MySectionItemAnimatedImage>
+          </MySectionItemAnimated>
+        </MySectionItem>
+      </MySectionWrapper>
     </MySection>
   );
 }
