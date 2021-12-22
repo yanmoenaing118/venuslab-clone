@@ -9,7 +9,7 @@ import MobileNavigation from "../components/Navigation/MobileNavigation";
 export default function Home() {
   return (
     <Layout>
-      <Load />
+      {/* <Load /> */}
       <Main />
 
       <Footer />
