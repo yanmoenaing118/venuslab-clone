@@ -1,4 +1,3 @@
-import ActiveLink from "../ActiveLink";
 import { ButtonPrimary } from "../Button";
 import { MyNavigation, MyNavigationList } from "./NavigationElements";
 import Link from "next/link";

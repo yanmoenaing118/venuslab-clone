@@ -13,8 +13,10 @@ export const MyHeader = styled.header`
   align-items: center;
   justify-content: center;
 
-  height: ${({ open }) => (!open ? `66px` : `40px`)};
-  transition: height 0.34s ease;
+  height: ${({ height }) => `${height}px`};
+
+  /* height: ${({ open }) => (!open ? `66px` : `40px`)}; */
+  transition: height 0.2s ease;
 `;
 
 export const MyHeaderWrapper = styled.div`
@@ -23,6 +25,8 @@ export const MyHeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  height: 100%;
 
   @media screen and (max-width: 920px) {
     padding: 0 1.2em;
@@ -35,7 +39,7 @@ export const MyHeaderLogo = styled.div`
   padding: 0.34em 0;
   /* margin-top: -0.1em; */
   position: absolute;
-  /* top: px; */
+
   top: ${({ open }) => (open ? `20px` : `0px`)};
   left: ${({ open }) => (open ? `50%` : `16px`)};
 

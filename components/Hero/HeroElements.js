@@ -3,11 +3,15 @@ import styled from "styled-components";
 export const MyHero = styled.section`
   width: 100%;
   height: 100vh;
+  position: relative;
+  z-index: 10;
+
   background-image: linear-gradient(
     to right bottom,
     rgba(var(--dark), 0.99),
     rgba(var(--dark), 0.99)
   );
+
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 `;
 
