@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { withRouter } from "next/router";
+import { useRouter } from "next/router";
+function ActiveLink({ href, children }) {
+  const router = useRouter();
 
-function ActiveLink({ router, href, children }) {
   return (
     <Link href={href}>
       <a
@@ -16,4 +17,4 @@ function ActiveLink({ router, href, children }) {
   );
 }
 
-export default withRouter(ActiveLink);
+export default ActiveLink;
