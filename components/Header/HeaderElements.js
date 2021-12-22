@@ -13,10 +13,7 @@ export const MyHeader = styled.header`
   align-items: center;
   justify-content: center;
 
-  height: ${({ height }) => `${height}px`};
-
-  /* height: ${({ open }) => (!open ? `66px` : `40px`)}; */
-  transition: height 0.2s ease;
+  height: 80px;
 `;
 
 export const MyHeaderWrapper = styled.div`

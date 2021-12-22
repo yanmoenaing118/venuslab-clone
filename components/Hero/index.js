@@ -1,7 +1,4 @@
 import { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
-import { useDispatch, useSelector } from "react-redux";
-import { setHeaderHeight } from "../../store";
 
 import {
   MyHero,
@@ -14,32 +11,15 @@ import {
 } from "./HeroElements";
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
-  const dispatch = useDispatch();
-
-  const { ref, entry } = useInView({
-    threshold: [0.8, 0.9],
-  });
-
-  // useEffect(() => {
-  //   if (!entry) return;
-  //   console.log(entry.intersectionRatio);
-  //   if (entry.intersectionRatio > 0.8) {
-  //     console.log("height must be 120px");
-  //     dispatch(setHeaderHeight(100));
-  //   } else {
-  //     dispatch(setHeaderHeight(66));
-  //   }
-  //   return;
-  // }, [entry]);
 
   useEffect(() => {
-    setTimeout(() => {
+    const time = setTimeout(() => {
       setLoaded(true);
     }, 1600);
   }, []);
 
   return (
-    <MyHero ref={ref}>
+    <MyHero>
       <MyHeroWrapper>
         <MyHeroTextbox loaded={loaded}>
           <MyHeroTitle>

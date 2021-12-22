@@ -23,25 +23,25 @@ export default function MobileNavigation() {
           </Link>
         </li>
         <li>
-          <Link href="/blog/hello-world">
+          <Link href="/services">
             <a>Services</a>
           </Link>
         </li>
 
         <li>
-          <Link href="/blog/hello-world">
+          <Link href="/portfolios">
             <a>Portfolios</a>
           </Link>
         </li>
 
         <li>
-          <Link href="/blog/hello-world">
+          <Link href="/blog">
             <a>Blog</a>
           </Link>
         </li>
 
         <li>
-          <Link href="/blog/hello-world">
+          <Link href="/contact">
             <a>Contact</a>
           </Link>
         </li>
