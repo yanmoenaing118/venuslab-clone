@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import {
@@ -10,8 +11,14 @@ import {
   MyHeroPara,
 } from "./HeroElements";
 export default function Hero() {
-  const loaded = useSelector((state) => state.animation.loaded);
-  console.log(loaded);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true);
+    }, 1600);
+  }, []);
+
   return (
     <MyHero>
       <MyHeroWrapper>

@@ -1,30 +1,44 @@
 import ActiveLink from "../ActiveLink";
 import { ButtonPrimary } from "../Button";
 import { MyNavigation, MyNavigationList } from "./NavigationElements";
+import Link from "next/link";
+
 export default function Navigation() {
   return (
     <MyNavigation>
       <MyNavigationList>
         <li>
-          <ActiveLink href="/">Home</ActiveLink>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
         </li>
         <li>
-          <ActiveLink href="/about">About</ActiveLink>
+          <Link href="/about">
+            <a>About</a>
+          </Link>
         </li>
         <li>
-          <ActiveLink href="/services">Services</ActiveLink>
-        </li>
-
-        <li>
-          <ActiveLink href="/portfolio">Portfolios</ActiveLink>
-        </li>
-
-        <li>
-          <ActiveLink href="/blog">Blog</ActiveLink>
+          <Link href="/services">
+            <a>Services</a>
+          </Link>
         </li>
 
         <li>
-          <ActiveLink href="/contact">Contact</ActiveLink>
+          <Link href="/portfolio">
+            <a>Portfolios</a>
+          </Link>
+        </li>
+
+        <li>
+          <Link href="/blog">
+            <a>Blog</a>
+          </Link>
+        </li>
+
+        <li>
+          <Link href="/contact">
+            <a>Contact</a>
+          </Link>
         </li>
 
         <li>
