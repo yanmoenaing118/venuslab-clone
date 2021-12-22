@@ -9,32 +9,22 @@ export default function Navigation() {
           <ActiveLink href="/">Home</ActiveLink>
         </li>
         <li>
-          <ActiveLink href="/about">
-            <a>About</a>
-          </ActiveLink>
+          <ActiveLink href="/about">About</ActiveLink>
         </li>
         <li>
-          <ActiveLink href="/services">
-            <a>Services</a>
-          </ActiveLink>
+          <ActiveLink href="/services">Services</ActiveLink>
         </li>
 
         <li>
-          <ActiveLink href="/portfolio">
-            <a>Portfolios</a>
-          </ActiveLink>
+          <ActiveLink href="/portfolio">Portfolios</ActiveLink>
         </li>
 
         <li>
-          <ActiveLink href="/blog">
-            <a>Blog</a>
-          </ActiveLink>
+          <ActiveLink href="/blog">Blog</ActiveLink>
         </li>
 
         <li>
-          <ActiveLink href="/contact">
-            <a>Contact</a>
-          </ActiveLink>
+          <ActiveLink href="/contact">Contact</ActiveLink>
         </li>
 
         <li>
