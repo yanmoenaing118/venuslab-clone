@@ -8,17 +8,11 @@ import MobileNavigation from "../components/Navigation/MobileNavigation";
 
 export default function Home() {
   return (
-    <div>
-      {/* <Load /> */}
+    <Layout>
+      <Load />
+      <Main />
 
-      {/* <Header /> */}
-
-      <Layout>
-        {/* <Load /> */}
-        <Main />
-
-        <Footer />
-      </Layout>
-    </div>
+      <Footer />
+    </Layout>
   );
 }
