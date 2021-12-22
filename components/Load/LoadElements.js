@@ -34,7 +34,7 @@ export const LoadLoading = styled.div`
   width: 80%;
   height: 50%;
   background-image: url(https://www.venuslab.co/images/loading.png);
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: contain;
 

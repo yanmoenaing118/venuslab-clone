@@ -18,6 +18,7 @@ export default function Header() {
                 src="https://www.venuslab.co/icons/logo.svg"
                 width={180}
                 height={90}
+                alt="Venuslab Logo"
               />
             </a>
           </Link>
