@@ -20,17 +20,17 @@ export default function Hero() {
     threshold: [0.8, 0.9],
   });
 
-  useEffect(() => {
-    if (!entry) return;
-    console.log(entry.intersectionRatio);
-    if (entry.intersectionRatio > 0.8) {
-      console.log("height must be 120px");
-      dispatch(setHeaderHeight(100));
-    } else {
-      dispatch(setHeaderHeight(66));
-    }
-    return;
-  }, [entry]);
+  // useEffect(() => {
+  //   if (!entry) return;
+  //   console.log(entry.intersectionRatio);
+  //   if (entry.intersectionRatio > 0.8) {
+  //     console.log("height must be 120px");
+  //     dispatch(setHeaderHeight(100));
+  //   } else {
+  //     dispatch(setHeaderHeight(66));
+  //   }
+  //   return;
+  // }, [entry]);
 
   useEffect(() => {
     setTimeout(() => {

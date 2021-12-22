@@ -11,7 +11,7 @@ export default function Header() {
   const height = useSelector((state) => state.animation.headerHeight);
 
   return (
-    <MyHeader open={open} height={height}>
+    <MyHeader open={open} height={80}>
       <MyHeaderWrapper>
         <MyHeaderLogo open={open}>
           <Link href="/">
