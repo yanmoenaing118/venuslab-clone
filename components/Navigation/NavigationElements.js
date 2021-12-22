@@ -17,7 +17,6 @@ export const MyNavigationList = styled.ul`
   li {
     margin-left: 2.8em;
     a {
-      color: #fff;
       text-decoration: none;
       display: flex;
       align-items: center;

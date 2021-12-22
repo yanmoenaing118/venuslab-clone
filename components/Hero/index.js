@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
-import Container from "../Container";
-import styles from "./../../styles/Hero.module.scss";
+
 import {
   MyHero,
   MyHeroTextbox,

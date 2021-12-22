@@ -1,4 +1,4 @@
-import Link from "next/link";
+import ActiveLink from "../ActiveLink";
 import { ButtonPrimary } from "../Button";
 import { MyNavigation, MyNavigationList } from "./NavigationElements";
 export default function Navigation() {
@@ -6,37 +6,35 @@ export default function Navigation() {
     <MyNavigation>
       <MyNavigationList>
         <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
+          <ActiveLink href="/">Home</ActiveLink>
         </li>
         <li>
-          <Link href="/about">
+          <ActiveLink href="/about">
             <a>About</a>
-          </Link>
+          </ActiveLink>
         </li>
         <li>
-          <Link href="/blog/hello-world">
+          <ActiveLink href="/services">
             <a>Services</a>
-          </Link>
+          </ActiveLink>
         </li>
 
         <li>
-          <Link href="/blog/hello-world">
+          <ActiveLink href="/portfolio">
             <a>Portfolios</a>
-          </Link>
+          </ActiveLink>
         </li>
 
         <li>
-          <Link href="/blog/hello-world">
+          <ActiveLink href="/blog">
             <a>Blog</a>
-          </Link>
+          </ActiveLink>
         </li>
 
         <li>
-          <Link href="/blog/hello-world">
+          <ActiveLink href="/contact">
             <a>Contact</a>
-          </Link>
+          </ActiveLink>
         </li>
 
         <li>
