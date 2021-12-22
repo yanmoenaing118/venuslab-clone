@@ -30,6 +30,7 @@ export const ServicesSectionHeader = styled.div`
 export const ServicesSectionHeaderH2 = styled.h1`
   color: rgba(var(--primary));
   font-size: 2.8rem;
+  text-align: center;
 
   @media screen and (max-width: 768px) {
     font-size: 1.8rem;
@@ -43,7 +44,8 @@ export const MyServicesGrid = styled.div`
   margin-top: 4em;
 
   @media screen and (max-width: 480px) {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1.5em;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
 `;
 
@@ -52,6 +54,10 @@ export const MyServiceItem = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 1.3em 3em;
+
+  @media screen and (max-width: 480px) {
+    padding: 1em 1.5em;
+  }
 `;
 export const MyServiceItemTitle = styled.h3`
   color: #fff;
@@ -104,7 +110,7 @@ export const LetTalkH1 = styled.h1`
   }
 
   @media screen and (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 2.5rem;
   }
 `;
 

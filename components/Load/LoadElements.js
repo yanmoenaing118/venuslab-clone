@@ -20,7 +20,7 @@ export const LoadHello = styled.div`
   max-width: 520px;
   height: 216px;
   background-image: url(https://www.venuslab.co/images/hello.png);
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: contain;
   /* background-color: red; */
@@ -55,4 +55,8 @@ export const LoadingPercentage = styled.div`
   font-size: 8rem;
   font-weight: bold;
   color: rgb(var(--primary));
+
+  @media screen and (max-width: 480px) {
+    font-size: 4rem;
+  }
 `;

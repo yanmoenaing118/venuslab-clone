@@ -4,7 +4,7 @@ import {
   LoadingPercentage,
   LoadLoading,
 } from "./LoadElements";
-import Image from "next/image";
+
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { triggerLoad } from "../../store";
