@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { withRouter } from "next/router";
 
 function ActiveLink({ router, href, children }) {
@@ -7,16 +8,17 @@ function ActiveLink({ router, href, children }) {
   };
 
   return (
-    <a
-      href="/"
-      onClick={onClick}
-      style={{
-        textDecoration: "none",
-        color: router.pathname == href ? "rgba(var(--primary))" : "#fff",
-      }}
-    >
-      {children}
-    </a>
+    <Link href={href}>
+      <a
+        onClick={onClick}
+        style={{
+          textDecoration: "none",
+          color: router.pathname == href ? "rgba(var(--primary))" : "#fff",
+        }}
+      >
+        {children}
+      </a>
+    </Link>
   );
 }
 
